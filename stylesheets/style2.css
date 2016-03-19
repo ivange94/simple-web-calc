@@ -1,0 +1,61 @@
+/*
+	Author: Ivange Larry Ndumbe
+	Matricule: FE13A096
+*/
+
+/*
+	This style sheet is for the about and help pages
+*/ 
+
+body {
+	background-color: #111111;
+}
+
+#navigation {
+	float: left;
+	border: 1px solid #000;
+	background-color: #50d07d;
+	width: 200px;
+	padding: 10px;
+}
+
+#bodycontent {
+	padding: 10px;
+	margin-left: 227px;
+	margin-bottom: 5px;
+	border: 1px solid #000;
+	background-color: #ffffff;
+}
+
+#footer {
+	clear: both;
+	border: 1px solid #000;
+	background-color: #ccc;
+	padding: 10px;
+}
+
+#header {
+	background-color: #ccc;
+	border: 1px solid #000;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+/*The following css rules will style my links*/
+a:link {
+	color: blue;
+}
+
+a:visited {
+	color: grey;
+}
+
+a:hover {
+	background-color: #2dabf9;
+	color: white; 
+	border: 1px solid #000;
+}
+
+a:active {
+	color: red;
+}

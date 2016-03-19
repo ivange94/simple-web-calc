@@ -1,0 +1,166 @@
+var textInput = document.myForm.txtInput;
+var clearScreen = false;
+
+function isDisplayEmpty() {
+	if (textInput.value.localeCompare("0") == 0)
+		return true;
+	else
+		return false;
+}
+
+function btn1Keypad_onclick () {
+	if (clearScreen == true) {
+		textInput.value = "0";
+		clearScreen = false;
+	}
+	if (isDisplayEmpty()) 
+		textInput.value = "1";
+	else 
+		textInput.value += "1";
+}
+
+function btn2Keypad_onclick () {
+	if (clearScreen == true) {
+		textInput.value = "0";
+		clearScreen = false;
+	}
+	if (isDisplayEmpty())
+		textInput.value = "2";
+	else
+		textInput.value += "2";
+}
+
+function btn3Keypad_onclick () {
+	if (clearScreen == true) {
+		textInput.value = "0";
+		clearScreen = false;
+	}
+	if (isDisplayEmpty())
+		textInput.value = "3";
+	else
+		textInput.value += "3";
+}
+
+function btn4Keypad_onclick () {
+	if (clearScreen == true) {
+		textInput.value = "0";
+		clearScreen = false;
+	}
+	if (isDisplayEmpty())
+		textInput.value = "4";
+	else
+		textInput.value += "4";
+}
+
+function btn5Keypad_onclick () {
+	if (clearScreen == true) {
+		textInput.value = "0";
+		clearScreen = false;
+	}
+	if (isDisplayEmpty())
+		textInput.value = "5";
+	else
+		textInput.value += "5";
+}
+
+function btn6Keypad_onclick () {
+	if (clearScreen == true) {
+		textInput.value = "0";
+		clearScreen = false;
+	}
+	if (isDisplayEmpty())
+		textInput.value = "6";
+	else
+		textInput.value += "6";
+}
+
+function btn7Keypad_onclick () {
+	if (clearScreen == true) {
+		textInput.value = "0";
+		clearScreen = false;
+	}
+	if (isDisplayEmpty())
+		textInput.value = "7";
+	else
+		textInput.value += "7";
+}
+
+function btn8Keypad_onclick () {
+	if (clearScreen == true) {
+		textInput.value = "0";
+		clearScreen = false;
+	}
+	if (isDisplayEmpty())
+		textInput.value = "8";
+	else
+		textInput.value += "8";
+}
+
+function btn9Keypad_onclick () {
+	if (clearScreen == true) {
+		textInput.value = "0";
+		clearScreen = false;
+	}
+	if (isDisplayEmpty())
+		textInput.value = "9";
+	else
+		textInput.value += "9";
+}
+
+function btn0Keypad_onclick () {
+	if (clearScreen == true) {
+		textInput.value = "0";
+		clearScreen = false;
+	}
+	if (isDisplayEmpty())
+		;
+	else		
+		textInput.value += "0";
+}
+
+function btnDotKeypad_onclick () {
+	textInput.value += ".";
+}
+
+function btnEqualsKeypad_onclick () {
+	var result = eval(textInput.value);
+		
+	textInput.value = result;
+	clearScreen = true;
+}
+
+function btnDivideOperand_onclick () {
+		textInput.value += "/";
+		clearScreen = false;
+}
+
+function btnMultiplyOperand_onclick () {
+		textInput.value += "*";
+		clearScreen = false;
+}
+
+function btnSubtractOperand_onclick () {
+		textInput.value += "-";
+		clearScreen = false;
+}
+
+function btnPlusOperand_onclick() {
+		textInput.value += "+";
+		clearScreen = false;
+}
+
+function CE_onclick() {
+	textInput.value = "0";
+}
+
+function backspace_onclick() {
+	var str = textInput.value;
+	var sub = str.substring(0, str.length - 1);
+
+	if (sub.indexOf('+') == -1 || sub.indexOf('-') == -1|| sub.indexOf('/') == -1|| sub.indexOf('*') == -1)
+		operand = false;
+	if (sub.length == 0)
+		textInput.value = "0";
+	else
+		textInput.value = sub;
+}

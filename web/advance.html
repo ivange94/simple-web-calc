@@ -1,0 +1,102 @@
+<!-- advance.html
+		
+	  This page will the interface for my advance functionality of my calculator. These are just some few extra features, it is not part of the requirement.
+	  The script that handles events for this section is called advanced.js and it uses a different logic from that suggested by the teacher.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FET Webcal - FET Web Calculator</title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/style1.css" />
+</head>
+<body onload="startTime()">
+	<!-- main calculator body-->
+	<div id="bodycontent">
+	<!-- This calculator will have two interfaces, a basic interface that can only perform simple arithmetic
+		 operations like addition, subtration, multiplication and division and an advance interface that will perform
+		 other advance operations. But the advance interface will be hidden be default. user will have implicityly show 
+		 this interface be selecting advance from two radio buttons that say, (basic and advanced)
+	-->
+	<div id="basic">
+	<div id="toolbar">
+		<a href="../index.html">Basic</a>
+		<a href="advance.html">Advance</a>
+		<a href="help.html" target="_blank">Help</a>
+		<a href="about.html" target="_blank">About</a>
+	</div>
+		<form action="" method="post" id="calcForm" name="myForm">
+			<table>
+				<tr>
+					<td colspan="4"><input type="text" name="txtInput" readonly="readonly"maxlength="31" value="0" id="txtInput" /></td><!-- This will simulate my calculator screen-->
+				</tr>
+				<tr id="simple">
+					<td><input type="radio" name="radAngleType" value="0" checked="checked" onclick="changeAngleType()" />Degrees</td>	
+					<td><input type="radio" name="radAngleType" value="1" onclick="changeAngleType()"/>Radians</td>
+					<td>&nbsp;</td>
+					<td><input type="text" name="txtTimeBox" readonly="readonly" size="8" value="00:00:00"/></td>			
+				</tr>
+				<tr>
+					<td><input type="button" name="btnCancel" value="CE" onclick="CE_onclick()" class="myButton"/></td> <!-- This field is a cancel button that clears everything on the screen -->
+					<td colspan="3"><input type="button" name="btnBackspace" value="backspace" onclick="backspace_onclick()" class="myButton" /></td> <!-- this is a back space button (i.e it deletes one character backwards at a time)-->
+				</tr>
+
+				<tr>
+					<td><input type="button" class="myButton" value="sin" onclick="btnOperandSin_onclick()"/></td>
+					<td><input type="button" class="myButton" value="cos" onclick="btnOperandCos_onclick()"/></td>
+					<td><input type="button" class="myButton" value="tan" onclick="btnOperandTan_onclick()"/></td>
+					<td><input type="button" class="myButton" value="asin" onclick="btnOperandAsin_onclick()"/></td>
+				</tr>
+
+				<tr>
+					<td><input type="button" class="myButton" value="ln" onclick="btnOperandLn_onclick()"/></td>
+					<td><input type="button" class="myButton" value="log" onclick="btnOperandLog_onclick()"/></td>
+					<td><input type="button" class="myButton" value="sqrt" onclick="btnOperandSqrt_onclick()"/></td>
+					<td><input type="button" class="myButton" value="acos" onclick="btnOperandAcos_onclick()"/></td>
+				</tr>
+
+				<tr>
+					<td><input type="button" class="myButton" value="cbrt" onclick="btnOperandCubeRoot_onclick()"/></td>
+					<td><input type="button" class="myButton" value="%" onclick="btnOperandMod_onclick()"/></td>
+					<td><input type="button" class="myButton" value="exp" onclick="btnOperandExp_onclick()"/></td>
+					<td><input type="button" class="myButton" value="atan" onclick="btnOperandAtan_onclick()"/></td>
+				</tr>
+				<tr>
+				<!-- i will name all my numeric keys btnKeypad and they will handler by the btnKeypad_onclick() function-->
+				<!-- all operands will be named btmOperand and will have and onclick value of btnOperand_onclic()-->
+					<td><input type="button" name="btn7Keypad" value="7" onclick="btn7Keypad_onclick()" class="myButton"/></td>
+					<td><input type="button" name="btn8Keypad" value="8" onclick="btn8Keypad_onclick()" class="myButton"/></td>
+					<td><input type="button" name="btn9Keypad" value="9" onclick="btn9Keypad_onclick()" class="myButton"/></td>
+					<td><input type="button" name="btnDivideOperand" value="/" onclick="btnDivideOperand_onclick()" class="myButton" /></td>
+				</tr>
+				<tr>
+					<td><input type="button" name="btn4Keypad" value="4" onclick="btn4Keypad_onclick()" class="myButton"/></td>
+					<td><input type="button" name="btn5Keypad" value="5" onclick="btn5Keypad_onclick()" class="myButton"/></td>
+					<td><input type="button" name="btn6Keypad" value="6" onclick="btn6Keypad_onclick()" class="myButton"/></td>
+					<td><input type="button" name="btnMulitplyOperand" value="*" onclick="btnMultiplyOperand_onclick()" class="myButton" /></td>
+				</tr>
+				<tr>
+					<td><input type="button" name="btn1Keypad" value="1" onclick="btn1Keypad_onclick()" class="myButton"/></td>
+					<td><input type="button" name="btn2Keypad" value="2" onclick="btn2Keypad_onclick()" class="myButton"/></td>
+					<td><input type="button" name="btn3Keypad" value="3" onclick="btn3Keypad_onclick()" class="myButton"/></td>
+					<td><input type="button" name="btnSubtractOperand" value="-" onclick="btnSubtractOperand_onclick()" class="myButton" /></td>
+				</tr>
+				<tr>
+					<td><input type="button" name="btnDotKeypad" value="." onclick="btnDotKeypad_onclick()" class="myButton"/></td>
+					<td><input type="button" name="btn0Keypad" value="0" onclick="btn0Keypad_onclick()" class="myButton"/></td>
+					<td><input type="button" name="btnEqualsKeypad" value="=" onclick="btnEqualsKeypad_onclick()" class="myButton"/></td>
+					<td><input type="button" name="btnPlusOperand" value="+" onclick="btnPlusOperand_onclick()" class="myButton" /></td>
+				</tr>
+				</table>
+			</form>
+		</div> <!-- end of basic div -->
+		<div id="advanced">
+			
+		</div> <!-- end of advance div -->
+
+		<script type="text/javascript" src="../scripts/advanced.js"></script>
+		<script type="text/javascript" src="../scripts/script.js"></script>
+	</div> <!-- end of bodycontent -->
+</body>
+</html>>

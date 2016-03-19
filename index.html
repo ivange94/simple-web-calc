@@ -1,0 +1,83 @@
+<!-- Author: Ivange Larry Ndumbe
+	Matricule: FE13A096
+-->
+
+<!-- This calculator will have two interfaces, a basic interface that can only perform simple arithmetic
+	 operations like addition, subtration, multiplication and division and an advance interface that will perform
+	 other advance operations. But the advance interface will be hidden be default. user will have implicityly show 
+	 this interface be selecting advance from two radio buttons that say, (basic and advanced)
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FET Webcal - FET Web Calculator </title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style1.css" />
+</head>
+<body>
+	<!-- main calculator body-->
+	<!-- index.html
+
+	  This is the default interface for this calculator. This interface just implements the requirements as demanded by the teacher. There are no extra
+	  features here. The script that handles events for this page is called basic.js. index.html and basic.js try to follow the requirements and logic proposed
+	  by the teacher. It's functionality is simple, it simulates porpo calculator. For advanced features i created another page called advance.html and a 
+	  script advanced.js to handle its functionality. The advance mode of the calculator is completely different from that of basic.
+   -->
+	<div id="bodycontent">
+		<div id="basic">
+		<div id="toolbar">
+			<a href="index.html">Basic</a>
+			<a href="web/advance.html">Advance</a>
+			<a href="web/help.html" target="_blank">Help</a>
+			<a href="web/about.html" target="_blank">About</a>
+		</div>
+		<!-- I used a table inside a form to design this calculator, this is done so that buttons can appear in an orderly many on the page-->
+			<form action="" method="post" id="calcForm" name="myForm">
+				<table width="100%"> <!-- table width will take 100% of the parent container, in this case the div with id=basic-->
+					<tr>
+						<td colspan="4"><input type="text" name="txtInput" readonly="readonly" maxlength="31" value="0" id="txtInput" /></td><!-- This will simulate my calculator screen-->
+					</tr>
+					<tr>
+						<td><input type="button" name="btnCancel" value="CE" onclick="CE_onclick()" class="myButton"/></td> <!-- This field is a cancel button that clears everything on the screen -->
+						<td colspan="3"><input type="button" name="btnBackspace" value="backspace" onclick="backspace_onclick()" class="myButton" /></td> <!-- this is a back space button (i.e it deletes one character backwards at a time)-->
+					</tr>
+					
+					<tr>
+					<!-- i will name all my numeric keys btnKeypad and they will handler by the btnKeypad_onclick() function-->
+					<!-- all operands will be named btmOperand and will have and onclick value of btnOperand_onclic()-->
+						<td><input type="button" name="btn7Keypad" value="7" onclick="btn7Keypad_onclick()" class="myButton"/></td>
+						<td><input type="button" name="btn8Keypad" value="8" onclick="btn8Keypad_onclick()" class="myButton"/></td>
+						<td><input type="button" name="btn9Keypad" value="9" onclick="btn9Keypad_onclick()" class="myButton"/></td>
+						<td><input type="button" name="btnDivideOperand" value="/" onclick="btnDivideOperand_onclick()" class="myButton" /></td>
+					</tr>
+					<tr>
+						<td><input type="button" name="btn4Keypad" value="4" onclick="btn4Keypad_onclick()" class="myButton"/></td>
+						<td><input type="button" name="btn5Keypad" value="5" onclick="btn5Keypad_onclick()" class="myButton"/></td>
+						<td><input type="button" name="btn6Keypad" value="6" onclick="btn6Keypad_onclick()" class="myButton"/></td>
+						<td><input type="button" name="btnMulitplyOperand" value="*" onclick="btnMultiplyOperand_onclick()" class="myButton" /></td>
+					</tr>
+					<tr>
+						<td><input type="button" name="btn1Keypad" value="1" onclick="btn1Keypad_onclick()" class="myButton"/></td>
+						<td><input type="button" name="btn2Keypad" value="2" onclick="btn2Keypad_onclick()" class="myButton"/></td>
+						<td><input type="button" name="btn3Keypad" value="3" onclick="btn3Keypad_onclick()" class="myButton"/></td>
+						<td><input type="button" name="btnSubtractOperand" value="-" onclick="btnSubtractOperand_onclick()" class="myButton" /></td>
+					</tr>
+					<tr>
+						<td><input type="button" name="btnDotKeypad" value="." class="myButton"/></td>
+						<td><input type="button" name="btn0Keypad" value="0" onclick="btn0Keypad_onclick()" class="myButton"/></td>
+						<td><input type="button" name="btnEqualsKeypad" value="=" onclick="btnEqualsKeypad_onclick()" class="myButton"/></td>
+						<td><input type="button" name="btnPlusOperand" value="+" onclick="btnPlusOperand_onclick()" class="myButton" /></td>
+					</tr>
+				</table>
+			</form>
+		</div> <!-- end of basic div -->
+		<div id="advanced">
+			
+		</div> <!-- end of advance div -->
+
+		<script type="text/javascript" src="scripts/basic.js"></script>
+		<script type="text/javascript" src="scripts/script.js"></script>
+	</div> <!-- end of bodycontent -->
+</body>
+</html>>
